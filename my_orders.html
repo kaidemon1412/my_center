@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的订单</title>
+	</head>
+	<body>
+		<div class="orders">
+            		<h4><span>订单1</span><span>(待付款)</span></h4>
+            		<p><span>订单号&nbsp;:</span><span>20170914a48b69</span></p>
+            		<p><span>订单内容&nbsp;:</span><span>Scratch Level 1</span></p>
+            		<p><span>订单时间&nbsp;:</span><span>2017-08-14 21:35:32</span></p>
+            		<p><span>应付款&nbsp;:</span><span><i class="iconfont icon-renminbi"></i>2999.00</span></p>
+            		<p><span>实付款&nbsp;:</span><span><i class="iconfont icon-renminbi"></i>2999.00</span></p>
+            		<div class="submit_details">
+            			订单详情
+            		</div>
+            	</div>
+            	<div class="orders">
+            		<h4><span>订单2</span><span class="laton">(已付款)</span></h4>
+            		<p><span>订单号&nbsp;:</span><span>20170824bs58k93</span></p>
+            		<p><span>订单内容&nbsp;:</span><span>Scratch Level 1</span></p>
+            		<p><span>订单时间&nbsp;:</span><span>2017-08-14 21:35:32</span></p>
+            		<p><span>应付款&nbsp;:</span><span><i class="iconfont icon-renminbi"></i>2999.00</span></p>
+            		<p><span>实付款&nbsp;:</span><span><i class="iconfont icon-renminbi"></i>2999.00</span></p>
+            		<div class="submit_details">
+            			订单详情
+            		</div>
+            	</div>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			$(".submit_details").on("click",function(){
+            	$(".ord_details").load("orders_details.html");
+            });
+		});
+	</script>
+</html>

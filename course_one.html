@@ -1,0 +1,157 @@
+<!--直播课的第一排版页面   再点击课程模板后加载cours_details
+-->
+		<style type="text/css">
+			.scratch_course{
+           		margin-top: 1.6rem;
+           }
+           
+           .scratch_course div{
+           		background-color: #fff;
+           		width: 14.52rem;
+           		height: 4.16rem;
+           		display: inline-block;
+           		margin: 0.416rem 0.416rem 0 0.416rem;
+           		border: 0.04rem solid #dee1e2;
+           }
+           .scratch_course div img{
+	           	width: 2.08rem;
+	           	height: 2.08rem;
+	           	margin: 1.02rem 0.83rem;
+	           	display: block;
+	           	float: left;
+           }
+           .scratch_course div span{
+	           	display: inline-block;
+	           	height: 100%;
+	           	line-height:4.16rem;
+	           	font-size: 0.67rem;
+	           	color: #4396E8;
+           }
+           
+           /**/
+           .python_course{
+           		margin-top: 1.6rem;
+           }
+           
+           .python_course div{
+           		background-color: #fff;
+           		width: 14.52rem;
+           		height: 4.16rem;
+           		display: inline-block;
+           		margin: 0.416rem 0.416rem 0 0.416rem;
+           		border: 0.04rem solid #dee1e2;
+           }
+           .python_course div img{
+           	width: 2.08rem;
+           	height: 2.08rem;
+           	margin: 1.02rem 0.83rem;
+           	display: block;
+           	float: left;
+           }
+           .python_course div span{
+           	display: inline-block;
+           	height: 100%;
+           	line-height:4.16rem;
+           	font-size: 0.67rem;
+           	color: #4396E8;
+           }
+           /**/
+          .noip_course{
+           		margin-top: 1.6rem;
+           }
+           
+           .noip_course div{
+           		background-color: #fff;
+           		width: 14.52rem;
+           		height: 4.16rem;
+           		display: inline-block;
+           		margin: 0.416rem 0.416rem 0 0.416rem;
+           		border: 0.04rem solid #dee1e2;
+           }
+           .noip_course div img{
+           	width: 2.08rem;
+           	height: 2.08rem;
+           	margin: 1.02rem 0.83rem;
+           	display: block;
+           	float: left;
+           }
+           .noip_course div span{
+           	display: inline-block;
+           	height: 100%;
+           	line-height:4.16rem;
+           	font-size: 0.67rem;
+           	color: #4396E8;
+           }
+		</style>
+
+		<div class="scratch_course">
+            		<div>
+            			<img src="img/images/scratch_op.png"/>
+            			<span>Scratch Level 1</span>
+            		</div>
+            		<div>
+            			<img src="img/images/scratch_op.png"/>
+            			<span>Scratch Level 2</span>
+            		</div>
+            		<div>
+            			<img src="img/images/scratch_op.png"/>
+            			<span>Scratch Level 3</span>
+            		</div>
+            		<div>
+            			<img src="img/images/scratch_op.png"/>
+            			<span>Scratch Level 4</span>
+            		</div>
+    	</div>
+    	<div class="python_course">
+    		<div>
+    			<img src="img/images/python_op.png"/>
+    			<span>Python Level 1</span>
+    		</div>
+    		<div>
+    			<img src="img/images/python_op.png"/><span>Python Level 2</span>
+    		</div>
+    		<div>
+    			<img src="img/images/python.png"/><span>Python Level 3</span>
+    		</div>
+    		<div>
+    			<img src="img/images/python.png"/><span>Python Level 4</span>
+    		</div>
+    	</div>
+    	<div class="noip_course">
+    		<div>
+    			<img src="img/images/noip.png"/>
+    			<span>Noip Level 1</span>
+    		</div>
+    		<div>
+    			<img src="img/images/noip.png"/><span>Noip Level 2</span>
+    		</div>
+    		<div>
+    			<img src="img/images/noip.png"/><span>Noip Level 3</span>
+    		</div>
+    		<div>
+    			<img src="img/images/noip.png"/><span>Noip Level 4</span>
+    		</div>
+    	</div>
+
+	<script type="text/javascript">
+		$(".scratch_course div").on("click",function(){
+            	var html = $(this).html();
+            	console.log(html);
+            	$(".course_one").load("course_details.html");
+            	$(".title_course").html("<i class='iconfont icon-zuoyou1 goback'></i>"+html+"<i class='iconfont icon-zuoyou next'></i>");
+            });
+        $(".python_course div").on("click",function(){
+            	var html = $(this).html();
+            	console.log(html);
+            	$(".course_one").load("course_details.html");
+            	$(".title_course").html("<i class='iconfont icon-zuoyou1 goback'></i>"+html+"<i class='iconfont icon-zuoyou next'></i>");
+            });
+        $(".noip_course div").on("click",function(){
+            	var html = $(this).html();
+            	console.log(html);
+            	$(".course_one").load("course_details.html");
+            	$(".title_course").html("<i class='iconfont icon-zuoyou1 goback'></i>"+html+"<i class='iconfont icon-zuoyou next'></i>");
+            });
+            
+	</script>
+
