@@ -1,0 +1,230 @@
+<!--<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title></title>-->
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_459892_y1tydff3xf2prpb9.css"/>
+		<!--<script type="text/javascript">
+		//designWidth:设计稿的实际宽度值，需要根据实际设置
+		//maxWidth:制作稿的最大宽度值，需要根据实际设置
+		//这段js的最后面有两个参数记得要设置，一个为设计稿实际宽度，一个为制作稿最大宽度，例如设计稿为750，最大宽度为750，则为(750,750);
+		(function(designWidth, maxWidth) {
+			var doc = document,
+			win = window,
+			docEl = doc.documentElement,
+			remStyle = document.createElement("style"),
+			tid;
+		
+			function refreshRem() {
+				var width = docEl.getBoundingClientRect().width;
+				maxWidth = maxWidth || 540;
+				width>maxWidth && (width=maxWidth);
+				//这里的20倍是实际设计稿的倍数，即设计稿的20px==1rem；如果是100则是100px == 1rem
+				var rem = width * 20 / designWidth;   
+				remStyle.innerHTML = 'html{font-size:' + rem + 'px;}';
+			}
+		
+			if (docEl.firstElementChild) {
+				docEl.firstElementChild.appendChild(remStyle);
+			} else {
+				var wrap = doc.createElement("div");
+				wrap.appendChild(remStyle);
+				doc.write(wrap.innerHTML);
+				wrap = null;
+			}
+			//要等 wiewport 设置好后才能执行 refreshRem，不然 refreshRem 会执行2次；
+			refreshRem();
+		
+			win.addEventListener("resize", function() {
+				clearTimeout(tid); //防止执行两次
+				tid = setTimeout(refreshRem, 300);
+			}, false);
+		
+			win.addEventListener("pageshow", function(e) {
+				if (e.persisted) { // 浏览器后退的时候重新计算
+					clearTimeout(tid);
+					tid = setTimeout(refreshRem, 300);
+				}
+			}, false);
+		
+			if (doc.readyState === "complete") {
+				doc.body.style.fontSize = "16px";
+			} else {
+				doc.addEventListener("DOMContentLoaded", function(e) {
+					doc.body.style.fontSize = "16px";
+				}, false);
+			}
+		})(750, 750);
+	</script>-->
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.ord_data{
+			background: #ecf0f1;
+			padding-bottom: 5rem;
+		}
+		
+		.ord_data>h4{
+			height: 3.958rem;
+			font-weight: 500;
+			text-align: center;
+			color: #51bae9;
+			line-height: 3.958rem;
+		}
+		/*-----------------订单------------------------*/
+		.ord_data table{
+			width: 100%;
+			font-size: 1rem;
+			text-align: center;
+			background-color: #FFFFFF;
+			border-top: 0.042rem solid #DEE1E2;
+			border-bottom: 0.042rem solid #DEE1E2;
+		}
+		.ord_data table tr{
+			height: 3.1458rem;
+			line-height: 3.1458rem;
+		}
+		.ord_data table tr th{
+			font-weight: 500;
+			color: #51bae9;
+		}
+		.ord_data table tr td{
+			color: #666666;
+		}
+		.ord_data table tr td i{
+			font-size: 0.5rem;
+		    position: relative;
+		    top: -0.2rem;
+		}
+		.ord_data table tr td:nth-of-type(4) span{
+			color: #ff1010;
+		}
+		
+		/*--------------------收货信息-----------------------*/
+		.recipient{
+			margin-top: 1rem;
+			background-color: #fff;
+			line-height: 2rem;
+			padding: 0.8rem 0;
+		}
+		.recipient>h4{
+			color: #51bae9;
+			text-align: left;
+			text-indent: 2rem;
+			font-size: 1rem;
+			font-weight: 500;
+		}
+		.recipient>p{
+       		display: flex;
+       		flex-direction: row;
+       		font-size: 0.875rem;
+       		height: 2rem;
+       }
+       
+       .recipient>p span:nth-of-type(1){
+       		color: #666666;
+       		flex: 1.5;
+       		text-indent: 4rem;
+       }
+       .recipient>p span:nth-of-type(2){
+       		color: #666666;
+       		flex: 3;
+       		
+       }
+		.recipient>p span:nth-of-type(2) i{
+			font-size: 0.5rem;
+		    position: relative;
+		    top: -0.2rem;
+		}
+		.balance p:nth-of-type(2) span:nth-of-type(2){
+			color: #51bae9;
+		}
+		
+		/*取消订单*/
+		.recipient .cancel_ord{
+			display: inline-block;
+			width: 8.33rem;
+       		height: 3.33rem;
+       		border: 0.042rem solid #ecf0f1;
+       		border-radius: 0.5rem;
+       		color: #b5b5b5;
+       		text-align: center;
+       		line-height: 3.33rem;
+       		margin: 1.5rem 4.5rem;
+		}
+		/*立刻付款*/
+		.recipient .submit_money{
+			display: inline-block;
+			width: 8.33rem;
+       		height: 3.33rem;
+       		border: 0.042rem solid #51abe9;
+       		border-radius: 0.5rem;
+       		color: #4396e8;
+       		text-align: center;
+       		line-height: 3.33rem;
+		}
+		
+		
+		
+	</style>
+	<!--</head>
+	<body>-->
+		<div class="ord_data">
+			<h4>订单：<span>20170914a48b69</span></h4>
+			<table border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th>序号</th>
+					<th>商品名称</th>
+					<th>金额(元)</th>
+					<th>状态</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Scratch Level 1</td>
+					<td><i class="iconfont icon-renminbi"></i>2999.00</td>
+					<td>待付款<span>(2小时59分)</span></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Scratch Level 1</td>
+					<td><i class="iconfont icon-renminbi"></i>2999.00</td>
+					<td>待付款<span>(2小时59分)</span></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Scratch Level 1</td>
+					<td><i class="iconfont icon-renminbi"></i>2999.00</td>
+					<td>待付款<span>(2小时59分)</span></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Scratch Level 1</td>
+					<td><i class="iconfont icon-renminbi"></i>2999.00</td>
+					<td>待付款<span>(2小时59分)</span></td>
+				</tr>
+			</table>
+			
+			<div class="recipient ">
+				<h4>收货信息</h4>
+				<p><span>收货人&nbsp;:</span><span>tangcele</span></p>
+        		<p><span>电话&nbsp;:</span><span>13510778328</span></p>
+        		<p><span>地址&nbsp;:</span><span>广东省深圳市南山区西丽学苑1088号</span></p>
+        		<p><span>订单状态&nbsp;:</span><span>待付款</span></p>
+			</div>
+			<div class="recipient balance">
+				<h4>总计</h4>
+				<p><span>商品总价&nbsp;:</span><span><i class="iconfont icon-renminbi"></i>5198.00</span></p>
+        		<p><span>需付款&nbsp;:</span><span><i class="iconfont icon-renminbi"></i>4198.00</span></p>
+        		<p><span>订单总价&nbsp;:</span><span><i class="iconfont icon-renminbi"></i>4198.00</span></p>
+        		<div class="cancel_ord">取消订单</div>
+				<div class="submit_money">立刻付款</div>
+			</div>
+			
+			
+		</div>
+	<!--</body>
+	
+</html>-->

@@ -1,0 +1,323 @@
+<!--首页的table切换操作页面-->
+		<style type="text/css">
+			
+			.theard{
+				display: flex;
+				flex-direction: row;
+				height: 2.7rem;
+				text-align: center;
+				line-height: 2.7rem;
+				font-size: 1rem;
+				color: #666666;
+				background-color: #ECF0F1;
+				padding-right: 2rem;
+			}
+			.theard div{
+				
+			}
+			.theard div:nth-of-type(1){
+				flex: 2;
+			}
+			.theard div:nth-of-type(2){
+				flex: 4;
+			}
+			.theard div:nth-of-type(3){
+				flex: 4;
+			}
+			.theard div:nth-of-type(4){
+				flex: 2;
+			}
+			
+			.tablebody{
+				display: flex;
+				flex-direction: row;
+				height: 3.125rem;
+				text-align: center;
+				line-height: 3.125rem;
+				font-size: 1rem;
+				color: #4396e8;
+				background-color: #fff;
+				border-top: 0.042rem solid #dee1e2;
+				border-bottom: 0.042rem solid #dee1e2;
+				margin-bottom: 0.125rem;
+				padding-right: 2rem;
+			}
+			.tablebody div{
+				
+			}
+			.tablebody div:nth-of-type(1){
+				flex: 2;
+			}
+			.tablebody div:nth-of-type(2){
+				flex: 4;
+			}
+			.tablebody div:nth-of-type(3){
+				flex: 4;
+			}
+			.tablebody div:nth-of-type(4){
+				flex: 2;
+				text-decoration: underline;
+			}
+			
+			.listnone{
+				color: #666666;
+			}
+			
+			/*.tcc{
+				display: none;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0,0,0,0.3);
+			}
+			
+			.tcc .tcc_center{
+				width: 27.9rem;
+				height: 30.4rem;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				background-color: #FFFFFF;
+			}
+			.tcc .tcc_center h4{
+				text-align: center;
+				height: 3.125rem;
+				background-color: #51abe9;
+				color: #fff;
+				line-height: 3.125rem;
+				font-weight: 500;
+			}
+			
+			.tcc .tcc_center .score{
+				font-size: 1.2rem;
+				 display: flex;
+    			margin: 1.67rem 1rem 0rem 1rem;
+    			border-bottom: 0.042rem solid #eee;
+    			line-height: 2.4rem;
+    			padding-bottom: 1.3rem;
+			}
+			
+			.tcc .tcc_center .score>span{
+				color: #999999;
+			}
+			  
+			
+			.remark{
+				font-size: 1.2rem;
+				display: flex;
+				height: 5.96rem;
+				border-bottom: 0.042rem solid #eee;
+				margin: 1.5rem 1rem 0 1rem;
+			}
+			.remark span{
+				line-height: 2rem;
+				color: #999999;
+			}
+			.remark div{
+				width: 21.04rem;
+			}
+			.remark div textarea{
+				width: 96%;
+			    resize: none;
+			    height: 70%;
+			    margin: 0 auto;
+			    padding-top: 0.5rem;
+			    -webkit-appearance: none;
+			    font-size: 1.2rem;
+			    font-family: 黑体, "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+			    border-width: 0px;
+			    border-style: initial;
+			    border-color: initial;
+			    border-image: initial;
+			    background: transparent;
+			    outline: none;
+
+			}
+			
+			.score_center{
+				margin-left: 0.8rem;
+			}
+			
+			.score_center span{
+				color: #666666;
+			}
+			
+			.input{
+				width: 7rem;
+			    text-align: right;
+			    border: none;
+			    outline: none;
+    			color: #ff2222;
+			} 
+			
+			.proposal{
+				height: 7.08rem;
+				line-height: 7.08rem;
+				font-size: 1.2rem;
+				padding: 0 1rem;
+			}
+			.proposal span:nth-of-type(1){
+				color: #999999;
+			}
+			.proposal span:nth-of-type(2){
+				color: #666666;
+				margin-left: 1rem;
+			}*/
+		</style>
+	
+		
+		<div class="table_scratch">
+			<div class="theard">
+				<div>序号</div>
+				<div>上课日期</div>
+				<div>上课时间</div>
+				<div>操作</div>
+			</div>
+			<div class="tablebody">
+				<div>1</div>
+				<div>8月31日（周五）</div>
+				<div>18:20——20:30</div>
+				<div>课堂评价</div>
+			</div>
+			<div class="tablebody">
+				<div>2</div>
+				<div>8月31日（周五）</div>
+				<div>18:20——20:30</div>
+				<div>课堂评价</div>
+			</div>
+			<div class="tablebody">
+				<div>3</div>
+				<div>8月31日（周五）</div>
+				<div>18:20——20:30</div>
+				<div>即将开课</div>
+			</div>
+			<div class="tablebody listnone">
+				<div>4</div>
+				<div>8月31日（周五）</div>
+				<div>18:20——20:30</div>
+				<div></div>
+			</div>
+			<div class="tablebody listnone">
+				<div>5</div>
+				<div>8月31日（周五）</div>
+				<div>18:20——20:30</div>
+				<div></div>
+			</div>
+			<div class="tablebody listnone">
+				<div>6</div>
+				<div>8月31日（周五）</div>
+				<div>18:20——20:30</div>
+				<div></div>
+			</div>
+			<div class="tablebody listnone">
+				<div>7</div>
+				<div>8月31日（周五）</div>
+				<div>18:20——20:30</div>
+				<div></div>
+			</div>
+			<div class="tablebody listnone">
+				<div>8</div>
+				<div>8月31日（周五）</div>
+				<div>18:20——20:30</div>
+				<div></div>
+			</div>
+			<div class="tablebody listnone">
+				<div>9</div>
+				<div>8月31日（周五）</div>
+				<div>18:20——20:30</div>
+				<div></div>
+			</div>
+			<div class="tablebody listnone">
+				<div>10</div>
+				<div>8月31日（周五）</div>
+				<div>18:20——20:30</div>
+				<div></div>
+			</div>
+			<div class="tablebody listnone">
+				<div>11</div>
+				<div>8月31日（周五）</div>
+				<div>18:20——20:30</div>
+				<div></div>
+			</div>
+			<div class="tablebody listnone">
+				<div>12</div>
+				<div>8月31日（周五）</div>
+				<div>18:20——20:30</div>
+				<div></div>
+			</div>
+			<div class="tablebody listnone">
+				<div>13</div>
+				<div>8月31日（周五）</div>
+				<div>18:20——20:30</div>
+				<div></div>
+			</div>
+		</div>
+		<!--<div class="tcc">
+			<div class="tcc_center">
+				<h4>课堂评价</h4>
+				<div class="score">
+					<span>评分：</span>
+					<div>
+						<div class="score_center">
+							<span>xxx能力</span>
+							<input class="input" type="text" value="9分"/>
+							<span>(满分10分)</span>
+						</div>
+						<div class="score_center">
+							<span>xxx能力</span>
+							<input class="input" type="text" value="9分"/>
+							<span>(满分10分)</span>
+						</div>
+						<div class="score_center">
+							<span>xxx能力</span>
+							<input class="input" type="text" value="9分"/>
+							<span>(满分10分)</span>
+						</div>
+						<div class="score_center">
+							<span>xxx能力</span>
+							<input class="input" type="text" value="9分"/>
+							<span>(满分10分)</span>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="remark">
+					<span>评语：</span>
+					<div>
+						<textarea id="remark_text">非常不错！非常不错！非常不错！非常不错！</textarea>
+					</div>
+				</div>
+				<div class="proposal">
+					<span>建议学习课程：</span><span>Scratch Level 1</span>
+				</div>
+			</div>
+			
+		</div>-->
+	<script type="text/javascript">
+		 $(".goback").one("click",function(){
+            	$(".course_one").load("course_one.html");
+            	$(".title_course").html("<h3>选择课程</h3>");
+            });
+            
+        $(".table_scratch").find(".tablebody").find("div").on("click",function(){
+       	  if($(this).html() == "课堂评价" &&$(this).index() == 3){
+       	  	console.log($(this).index())
+       	  	console.log($(this).html());
+       	  	$(".tcc").show();
+       	  }
+       	});  
+	     $(document).bind("click",function(e){ 
+			var target = $(e.target);
+			console.log(target.attr("class"));
+			if(target.attr("class") == "tcc" && $("#remark_text").val() !== "" && $(".input").val() !== ""){
+				$(".tcc").hide();
+			}
+			
+		}) 
+            
+	</script>
+

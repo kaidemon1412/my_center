@@ -1,0 +1,317 @@
+<!--课程总页面，在这里引入course_one.html  课程模块排版-->
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<script type="text/javascript" src="js/swiper.min.js"></script>
+		<style type="text/css">
+			.course_table{
+				text-align: center;
+				border-bottom: 0.04rem solid #dee1e2;
+			}
+			.course_table .title_course h3{
+				line-height: 3.96rem;
+				height: 3.96rem;
+				color: #666666;
+				font-size: 2rem;
+    			font-weight: 500;
+			}
+			.course_table .title_course{
+				width: 80%;
+				margin: 0 auto;
+				height: 3.96rem;
+				line-height: 3.96rem;
+			}
+			.course_table .title_course i:nth-of-type(1){
+				font-size: 2rem;
+				color: #4396E8;
+				float: left;
+			}
+			.course_table .title_course i:nth-of-type(2){
+				float: right;
+				font-size: 2rem;
+				color: #4396E8;
+			}
+			.course_table .title_course img{
+				width: 2.08rem;
+	           	height: 2.08rem;
+	           	position: relative;
+			    top: 0.6rem;
+			    left: -0.5rem;
+	           	
+			}
+			.course_table .title_course span{
+				color: #4396E8;
+				font-size: 1.5rem;
+			}
+			
+			
+			.course_table ul:after{
+				content: "\0020";
+				display: block;
+				height: 0;
+				clear: both;
+			}
+			
+			.course_table ul li{
+				/*width: 10rem;*/
+				width: 33.3%;
+				line-height: 2.5rem;
+				height: 2.5rem;
+				float: left;
+				color: #4396E8;
+			}
+			li.liston{
+                border-bottom: 0.16rem solid #51bae9;
+            }
+            .swiper-slide{
+            	background-color: #ecf0f1;
+            	padding-bottom: 10rem;
+            }
+           	
+           	/*弹出层*/
+           	.tcc{
+				display: none;
+				position: fixed;
+				top: 3.875rem;
+				left: 0;
+				width: 100%;
+				height: 47.41rem;
+				background-color: rgba(0,0,0,0.3);
+				z-index: 9999;
+			}
+			
+			.tcc .tcc_center{
+				width: 27.9rem;
+				height: 30.4rem;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				background-color: #FFFFFF;
+			}
+			.tcc .tcc_center h4{
+				text-align: center;
+				height: 3.125rem;
+				background-color: #51abe9;
+				color: #fff;
+				line-height: 3.125rem;
+				font-weight: 500;
+			}
+			
+			.tcc .tcc_center .score{
+				font-size: 1.2rem;
+				 display: flex;
+    			margin: 1.67rem 1rem 0rem 1rem;
+    			border-bottom: 0.042rem solid #eee;
+    			line-height: 2.4rem;
+    			padding-bottom: 1.3rem;
+			}
+			
+			.tcc .tcc_center .score>span{
+				color: #999999;
+			}
+			  
+			
+			.remark{
+				font-size: 1.2rem;
+				display: flex;
+				height: 5.96rem;
+				border-bottom: 0.042rem solid #eee;
+				margin: 1.5rem 1rem 0 1rem;
+			}
+			.remark span{
+				line-height: 2rem;
+				color: #999999;
+			}
+			.remark div{
+				width: 21.04rem;
+			}
+			.remark div textarea{
+				width: 96%;
+			    resize: none;
+			    height: 70%;
+			    margin: 0 auto;
+			    padding-top: 0.5rem;
+			    -webkit-appearance: none;
+			    font-size: 1.2rem;
+			    font-family: 黑体, "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+			    border-width: 0px;
+			    border-style: initial;
+			    border-color: initial;
+			    border-image: initial;
+			    background: transparent;
+			    outline: none;
+
+			}
+			
+			.score_center{
+				margin-left: 0.8rem;
+			}
+			
+			.score_center span{
+				color: #666666;
+			}
+			
+			.input{
+				width: 7rem;
+			    text-align: right;
+			    border: none;
+			    outline: none;
+    			color: #ff2222;
+			} 
+			
+			.proposal{
+				height: 7.08rem;
+				line-height: 7.08rem;
+				font-size: 1.2rem;
+				padding: 0 1rem;
+			}
+			.proposal span:nth-of-type(1){
+				color: #999999;
+			}
+			.proposal span:nth-of-type(2){
+				color: #666666;
+				margin-left: 1rem;
+			}
+           
+		</style>
+	
+		<div class="course_table">
+			<div class="title_course">
+				<!--<i class="iconfont icon-zuoyou1"></i>
+				<img src="img/images/scratch_op.png"/>
+            	<span>Scratch Level 1</span>
+            	<i class="iconfont icon-zuoyou"></i>-->
+            	<h3>选择课程</h3>
+			</div>
+			<!--<h3>选择课程</h3>-->
+			<ul class="swiplist">
+				<li class="liston">直播课</li>
+				<li>录播课</li>
+				<li>试听课</li>
+			</ul>
+			
+		</div>
+		<div class="swiper-container">
+          <div class="swiper-wrapper">
+          	<!--直播课一级页面-->
+            <div class="swiper-slide course_one" >
+            	<div class="scratch_course">
+            		<div>
+            			<img src="img/images/scratch_op.png"/>
+            			<span>Scratch Level 1</span>
+            		</div>
+            		<div>
+            			<img src="img/images/scratch_op.png"/>
+            			<span>Scratch Level 2</span>
+            		</div>
+            		<div>
+            			<img src="img/images/scratch_op.png"/>
+            			<span>Scratch Level 3</span>
+            		</div>
+            		<div>
+            			<img src="img/images/scratch_op.png"/>
+            			<span>Scratch Level 4</span>
+            		</div>
+            	</div>
+            	<div class="python_course">
+            		<div>
+            			<img src="img/images/python_op.png"/>
+            			<span>Python Level 1</span>
+            		</div>
+            		<div>
+            			<img src="img/images/python_op.png"/><span>Python Level 2</span>
+            		</div>
+            		<div>
+            			<img src="img/images/python.png"/><span>Python Level 3</span>
+            		</div>
+            		<div>
+            			<img src="img/images/python.png"/><span>Python Level 4</span>
+            		</div>
+            	</div>
+            	<div class="noip_course">
+            		<div>
+            			<img src="img/images/noip.png"/>
+            			<span>Noip Level 1</span>
+            		</div>
+            		<div>
+            			<img src="img/images/noip.png"/><span>Noip Level 2</span>
+            		</div>
+            		<div>
+            			<img src="img/images/noip.png"/><span>Noip Level 3</span>
+            		</div>
+            		<div>
+            			<img src="img/images/noip.png"/><span>Noip Level 4</span>
+            		</div>
+            	</div>
+            </div>
+            <!--录播课-->
+            <div class="swiper-slide" >
+            	
+            </div>
+            <!--试听课-->
+            <div class="swiper-slide" >
+            
+            </div>
+          </div>
+       </div>
+       <!--弹出层-->
+       <div class="tcc">
+			<div class="tcc_center">
+				<h4>课堂评价</h4>
+				<div class="score">
+					<span>评分：</span>
+					<div>
+						<div class="score_center">
+							<span>xxx能力</span>
+							<input class="input" type="text" value="9分"/>
+							<span>(满分10分)</span>
+						</div>
+						<div class="score_center">
+							<span>xxx能力</span>
+							<input class="input" type="text" value="9分"/>
+							<span>(满分10分)</span>
+						</div>
+						<div class="score_center">
+							<span>xxx能力</span>
+							<input class="input" type="text" value="9分"/>
+							<span>(满分10分)</span>
+						</div>
+						<div class="score_center">
+							<span>xxx能力</span>
+							<input class="input" type="text" value="9分"/>
+							<span>(满分10分)</span>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="remark">
+					<span>评语：</span>
+					<div>
+						<textarea id="remark_text">非常不错！非常不错！非常不错！非常不错！</textarea>
+					</div>
+				</div>
+				<div class="proposal">
+					<span>建议学习课程：</span><span>Scratch Level 1</span>
+				</div>
+			</div>
+			
+		</div>
+       
+       
+       
+	<script> 
+        $(function(){
+        	$(".course_one").load("course_one.html");
+            var mySwiper = new Swiper('.swiper-container', {
+                onTransitionEnd: function(swiper){
+                    $('.swiplist li').eq(mySwiper.activeIndex).addClass('liston').siblings().removeClass('liston');
+                }
+            })
+            $('.swiplist li').click(function(){
+                $(this).addClass('liston').siblings().removeClass('liston');
+                mySwiper.slideTo($(this).index(), 500)
+            });
+            
+        })        
+    </script>
+

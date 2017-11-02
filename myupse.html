@@ -1,0 +1,308 @@
+<!--<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title></title>
+		<script src="js/jquery-3.2.1.min.js"></script>-->
+		<!--↑↑↑↑↑上面这些公共的可以删掉-->
+		
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_459892_a1kbj83qv9529.css"/>
+		
+		<!--↓↓↓↓↓下面这段js也是也公共的可以删掉-->
+		
+		<!--<script type="text/javascript">
+		//designWidth:设计稿的实际宽度值，需要根据实际设置
+		//maxWidth:制作稿的最大宽度值，需要根据实际设置
+		//这段js的最后面有两个参数记得要设置，一个为设计稿实际宽度，一个为制作稿最大宽度，例如设计稿为750，最大宽度为750，则为(750,750);
+		(function(designWidth, maxWidth) {
+			var doc = document,
+			win = window,
+			docEl = doc.documentElement,
+			remStyle = document.createElement("style"),
+			tid;
+		
+			function refreshRem() {
+				var width = docEl.getBoundingClientRect().width;
+				maxWidth = maxWidth || 540;
+				width>maxWidth && (width=maxWidth);
+				//这里的20倍是实际设计稿的倍数，即设计稿的20px==1rem；如果是100则是100px == 1rem
+				var rem = width * 20 / designWidth;   
+				remStyle.innerHTML = 'html{font-size:' + rem + 'px;}';
+			}
+		
+			if (docEl.firstElementChild) {
+				docEl.firstElementChild.appendChild(remStyle);
+			} else {
+				var wrap = doc.createElement("div");
+				wrap.appendChild(remStyle);
+				doc.write(wrap.innerHTML);
+				wrap = null;
+			}
+			//要等 wiewport 设置好后才能执行 refreshRem，不然 refreshRem 会执行2次；
+			refreshRem();
+		
+			win.addEventListener("resize", function() {
+				clearTimeout(tid); //防止执行两次
+				tid = setTimeout(refreshRem, 300);
+			}, false);
+		
+			win.addEventListener("pageshow", function(e) {
+				if (e.persisted) { // 浏览器后退的时候重新计算
+					clearTimeout(tid);
+					tid = setTimeout(refreshRem, 300);
+				}
+			}, false);
+		
+			if (doc.readyState === "complete") {
+				doc.body.style.fontSize = "16px";
+			} else {
+				doc.addEventListener("DOMContentLoaded", function(e) {
+					doc.body.style.fontSize = "16px";
+				}, false);
+			}
+		})(750, 750);
+	</script>-->
+		
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		.top_table{
+			width: 100%;
+			height: 4.89rem;
+			
+		}
+		.top_table li{
+			width: 49.84%;
+			height: 4.79rem;
+			float: left;
+			color: #51BAE9;
+			text-align: center;
+		}
+		.top_table li:nth-of-type(1){
+			border-right: 0.1rem solid #dee1e2;
+		}
+		.top_table li img{
+			position: relative;
+			top: 1rem;
+			left: -0.2rem;
+			margin: 0 1rem;
+			width: 2.9rem;
+			height: 2.9rem;
+		}
+		/*点击样式*/
+		.top_table li.laton{
+			background: #ecf0f1;
+			border-bottom: 0.1rem solid #dee1e2;
+		}
+		
+		
+		
+		.box_search{
+			height: 6.04rem;
+		}
+		.box_search div{
+			height: 2.5rem;
+			width: 24.79rem;
+			border: 0.1rem solid #e5e5e5;
+			border-radius: 0.5rem;
+			float: left;
+			margin: 1.55rem 1rem;
+		}
+		.box_search div input{
+			display: inline-block;
+		    border: none;
+		    outline: none;
+		    margin: 0 auto;
+		    height: 100%;
+		    width: 50%;
+		    
+		}
+		.box_search div	i{
+			margin-left: 9rem;
+		    font-size: 2rem;
+		    color: #9dacad;
+		    top: 0.2rem;
+   			right: 0.3rem;
+   			position: relative;
+		    top: 0.2rem;
+		    left: -0.2rem;
+		}
+		.box_search span{
+			height: 100%;
+		    line-height: 6rem;
+		    color: #51abe9;
+		}
+		
+		.center_moble{
+			width: 100%;
+		}
+		
+		.center_moble .tribe_label{
+			margin: 1.25rem auto 0.625rem;;
+			width: 29.58rem;
+			height: 7.29rem;
+			box-shadow: 0.01rem 0.01rem 0.1rem;
+    		overflow: hidden;
+    		border-radius: 0.5rem;
+	 	}
+	 	.center_moble .tribe_label img{
+	 		float: left;
+	 		width: 10rem;
+	 		height: 7.29rem;
+	 		
+	 	}
+	 	.center_moble .tribe_label .tribe_label_title{
+	 		float: right;
+	 		width: 18rem;
+	 		line-height: 1.5rem;
+	 		text-align: left;
+	 		margin-right: 0.5rem;
+	 	}
+	 	
+	 	.center_moble .tribe_label .tribe_label_title h4{
+	 		font-weight: 500;
+	 		letter-spacing: 0.1rem;
+	 		font-size: 1.2rem;
+	 		color: #666666;
+	 		line-height: 2rem;
+	 	}
+	 	
+	 	.center_moble .tribe_label .tribe_label_title p{
+	 		display: inline-block;
+	 		width: 100%;
+	 		font-size: 0.83rem;
+	 		color: #cccccc;
+	 		letter-spacing: 0.01rem;
+		    word-break: break-all;
+		    text-overflow: ellipsis;
+		    display: -webkit-box;
+		    -webkit-box-orient: vertical;
+		    -webkit-line-clamp: 2;
+		    overflow: hidden;
+	 	}
+	 	.center_moble .tribe_label .tribe_label_title div{
+	 		margin-top: 0.5rem;
+	 	}
+	 	.center_moble .tribe_label .tribe_label_title div img{
+	 		width: 1.25rem;
+	 		height: 1.25rem;
+	 		position: relative;
+	 		top: 0.1rem;
+	 	}
+	 	
+	 	.center_moble .tribe_label .tribe_label_title div .nick{
+	 		color: #ccc;
+	 		display: inline-block;
+	 		margin-left: 0.5rem;
+	 		font-size: 0.85rem;
+	 	}
+	 	
+	 	.center_moble .tribe_label .tribe_label_title .info{
+	 		float: right;
+	 		margin-right: 0.2rem;
+	 		font-size: 0.83rem;
+	 	}
+	 	
+	 	.center_moble .tribe_label .tribe_label_title .info i{
+	 		font-size: 2rem;
+		    margin: 0 0.08rem;
+		    position: relative;
+		    top: 0.2rem;
+		    color: #999;
+	 	}
+	 	.center_moble .tribe_label .tribe_label_title .info i:nth-of-type(1){
+	 		top: 0.25rem;
+	 		margin-right: 0.2rem;
+	 	}
+	 	
+	 	.center_moble .tribe_label .tribe_label_title .info span{
+	 		color: #ccc;
+	 	}
+		 	
+		
+	</style>
+	
+	
+	<!--↓↓↓-->
+	<!--</head>
+	<body>-->
+	<!--↑↑↑-->	
+		<ul class="top_table">
+			<li><img src="img/images/scratch_op.png"/><span>Scratch</span></li>
+			<li class="laton"><img src="img/images/python_op.png"/><span>Python</span></li>
+		</ul>
+		<div class="box_search">
+			<div class="search"><i class="iconfont icon-sousuo"></i><input type="text" placeholder="作品标题"/></div> <span>搜索</span>
+		</div>
+		<div class="center_moble">
+			<div class="tribe_label">
+        		<img src="img/frist.jpeg">
+        		<div class="tribe_label_title">
+        			<h4>计时器编程计时器编程计时器编程</h4>
+        			<p>很用心的做程序希望得到各位老师的认可，感谢老师的教导，感谢感谢(<span>发布时间：20分钟以前</span>)</p>
+        			<div><img src="img/59f54bb99b988.jpg"/><span class="nick">初醒的伊夏</span><span class="info"><i class="iconfont icon-Artboard2"></i><span>600</span><i class="iconfont icon-zan"></i><span>300</span></div>
+        		</div>
+        	</div>
+			
+			<div class="tribe_label">
+        		<img src="img/frist.jpeg">
+        		<div class="tribe_label_title">
+        			<h4>计时器编程计时器编程计时器编程</h4>
+        			<p>很用心的做程序希望得到各位老师的认可，感谢老师的教导，感谢感谢(<span>发布时间：20分钟以前</span>)</p>
+        			<div><img src="img/59f54bb99b988.jpg"/><span class="nick">初醒的伊夏</span><span class="info"><i class="iconfont icon-Artboard2"></i><span>600</span><i class="iconfont icon-zan"></i><span>300</span></div>
+        		</div>
+        	</div>
+        	
+        	<div class="tribe_label">
+        		<img src="img/frist.jpeg">
+        		<div class="tribe_label_title">
+        			<h4>计时器编程计时器编程计时器编程</h4>
+        			<p>很用心的做程序希望得到各位老师的认可，感谢老师的教导，感谢感谢(<span>发布时间：20分钟以前</span>)</p>
+        			<div><img src="img/59f54bb99b988.jpg"/><span class="nick">初醒的伊夏</span><span class="info"><i class="iconfont icon-Artboard2"></i><span>600</span><i class="iconfont icon-zan"></i><span>300</span></div>
+        		</div>
+        	</div>
+        	
+        	<div class="tribe_label">
+        		<img src="img/frist.jpeg">
+        		<div class="tribe_label_title">
+        			<h4>计时器编程计时器编程计时器编程</h4>
+        			<p>很用心的做程序希望得到各位老师的认可，感谢老师的教导，感谢感谢(<span>发布时间：20分钟以前</span>)</p>
+        			<div><img src="img/59f54bb99b988.jpg"/><span class="nick">初醒的伊夏</span><span class="info"><i class="iconfont icon-Artboard2"></i><span>600</span><i class="iconfont icon-zan"></i><span>300</span></div>
+        		</div>
+        	</div>
+        	
+        	<div class="tribe_label">
+        		<img src="img/frist.jpeg">
+        		<div class="tribe_label_title">
+        			<h4>计时器编程计时器编程计时器编程</h4>
+        			<p>很用心的做程序希望得到各位老师的认可，感谢老师的教导，感谢感谢(<span>发布时间：20分钟以前</span>)</p>
+        			<div><img src="img/59f54bb99b988.jpg"/><span class="nick">初醒的伊夏</span><span class="info"><i class="iconfont icon-Artboard2"></i><span>600</span><i class="iconfont icon-zan"></i><span>300</span></div>
+        		</div>
+        	</div>
+        	
+        	<div class="tribe_label">
+        		<img src="img/frist.jpeg">
+        		<div class="tribe_label_title">
+        			<h4>计时器编程计时器编程计时器编程</h4>
+        			<p>很用心的做程序希望得到各位老师的认可，感谢老师的教导，感谢感谢(<span>发布时间：20分钟以前</span>)</p>
+        			<div><img src="img/59f54bb99b988.jpg"/><span class="nick">初醒的伊夏</span><span class="info"><i class="iconfont icon-Artboard2"></i><span>600</span><i class="iconfont icon-zan"></i><span>300</span></div>
+        		</div>
+        	</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			$(".top_table li").on("click",function(){
+				$(this).addClass("laton").siblings().removeClass("laton");
+			});
+		});
+	</script>
+	
+<!--</html>-->

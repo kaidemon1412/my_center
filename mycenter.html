@@ -1,0 +1,459 @@
+<!--个人中心-->
+<!D!DOCTYPE >
+<!--<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>这是移动端swiper的基本样式页面</title>-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+	<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_459892_y1tydff3xf2prpb9.css"/>
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+	<!--<script type="text/javascript">
+		//designWidth:设计稿的实际宽度值，需要根据实际设置
+		//maxWidth:制作稿的最大宽度值，需要根据实际设置
+		//这段js的最后面有两个参数记得要设置，一个为设计稿实际宽度，一个为制作稿最大宽度，例如设计稿为750，最大宽度为750，则为(750,750);
+		(function(designWidth, maxWidth) {
+			var doc = document,
+			win = window,
+			docEl = doc.documentElement,
+			remStyle = document.createElement("style"),
+			tid;
+		
+			function refreshRem() {
+				var width = docEl.getBoundingClientRect().width;
+				maxWidth = maxWidth || 540;
+				width>maxWidth && (width=maxWidth);
+				//这里的20倍是实际设计稿的倍数，即设计稿的20px==1rem；如果是100则是100px == 1rem
+				var rem = width * 20 / designWidth;   
+				remStyle.innerHTML = 'html{font-size:' + rem + 'px;}';
+			}
+		
+			if (docEl.firstElementChild) {
+				docEl.firstElementChild.appendChild(remStyle);
+			} else {
+				var wrap = doc.createElement("div");
+				wrap.appendChild(remStyle);
+				doc.write(wrap.innerHTML);
+				wrap = null;
+			}
+			//要等 wiewport 设置好后才能执行 refreshRem，不然 refreshRem 会执行2次；
+			refreshRem();
+		
+			win.addEventListener("resize", function() {
+				clearTimeout(tid); //防止执行两次
+				tid = setTimeout(refreshRem, 300);
+			}, false);
+		
+			win.addEventListener("pageshow", function(e) {
+				if (e.persisted) { // 浏览器后退的时候重新计算
+					clearTimeout(tid);
+					tid = setTimeout(refreshRem, 300);
+				}
+			}, false);
+		
+			if (doc.readyState === "complete") {
+				doc.body.style.fontSize = "16px";
+			} else {
+				doc.addEventListener("DOMContentLoaded", function(e) {
+					doc.body.style.fontSize = "16px";
+				}, false);
+			}
+		})(750, 750);
+	</script>
+		-->
+			
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		
+		.course_table{
+			height: 4.16rem;
+			text-align: center;
+			border-bottom: 0.04rem solid #dee1e2;
+		}
+		
+		.course_table ul{
+			height: 100%;
+		}
+		
+		li{
+			list-style: none;
+		}
+		
+		.course_table ul:after{
+			content: "\0020";
+			display: block;
+			height: 0;
+			clear: both;
+		}
+		
+		.course_table ul li{
+			/*width: 10rem;*/
+			width: 25%;
+			line-height: 4rem;
+			height: 4rem;
+			float: left;
+			color: #999999;
+		}
+		.course_table ul li.liston{
+            border-bottom: 0.16rem solid #51bae9;
+            color: #4396e8;
+        }
+        .swiper-slide{
+        	background-color: #ecf0f1;
+        	padding-bottom: 10rem;
+        }
+       	
+       /*----------------个人资料---------------------*/
+       .personal_data{
+	       	margin-top: 0.54rem;
+	       	background: #fff;
+	       	padding-bottom: 10rem;
+	       	padding: 0rem 0.79rem 5rem;
+       }
+       
+       .personal_data .name_img{
+       		width: 100%;
+       		height: 7.416rem;
+       		border-bottom: 0.04em solid #e2e2e2;
+       }
+       .personal_data .name_img .img_left{
+       		width: 5rem;
+       		height: 5rem;
+       		border-radius: 5rem;
+       		overflow: hidden;
+       		float: left;
+       		margin: 0.83rem 2.5rem;
+       }
+       .personal_data .name_img .img_left img{
+       		width: 100%;
+       		height: 100%;
+       }
+       .personal_data .name_img .modify{
+       		float: right;
+       		height: 100%;
+       		line-height: 7.316rem;
+       		margin-right: 2.5rem;
+       		font-size: 1rem;
+       		color: #2758b9;
+       }
+       .personal_data .name_img .modify i{
+	       	position: relative;
+	    	left: -0.5rem;
+       }
+       .data_lables{
+       		display: flex;
+       		flex-direction: row;
+       		height: 4.17rem;
+       		border-bottom: 0.04em solid #e2e2e2;
+       		text-align: left;
+       		line-height: 4.17rem;
+       }
+       .data_lables span{
+       		flex: 1;
+       		font-size: 1rem;
+       }
+       .data_lables span:nth-of-type(1){
+       		text-indent: 3rem;
+       		color: #666;
+       }
+       .data_lables span:nth-of-type(2){
+       		color: #333;
+       }
+       .data_lables span:nth-of-type(3){
+       		text-indent: 3.8rem;
+       		color: #3462bd;
+       }
+       .data_lables span:nth-of-type(3) i{
+       		position: relative;
+	    	left: -0.5rem;
+       }
+       
+       /*-----------------------修改密码---------------------*/
+       .password_modify{
+       		margin-top: 0.54rem;
+	       	background: #fff;
+	       	padding: 1.5rem 0.79rem 5rem;
+	       	overflow: hidden;
+       }
+       .modify_input{
+       		width: 28.58rem;
+       		height: 2.7rem;
+       		width: 28rem;
+       		margin: 1.7rem auto;
+       		line-height: 2.7rem;
+       }
+       
+       .modify_input span{
+       		font-size: 1rem;
+       		color: #333333;
+       }
+       
+       .modify_input div{
+       		display: inline-block;
+       		height: 100%;
+       		width: 21.25rem;
+       		border: 0.042rem solid #eaeaea;
+       		border-radius: 0.5rem;
+       		float: right;
+       }
+       #original_password,#new_password,#again_password{
+       		border: none;
+		    outline: none;
+		    background-color: rgba(255,255,255,0);
+		    width: 90%;
+		    display: block;
+		    margin: 0 auto;
+		    height: 100%;
+       }
+       
+       .button_submit{
+       		width: 7.2rem;
+       		height: 2.7rem;
+       		color: #2758b9;
+       		border: 0.042rem solid #2758b9;
+       		border-radius: 0.5rem;
+       		margin: 5rem auto;
+       		text-align: center;
+       		line-height: 2.7rem;
+       		font-size: 1rem;
+       }
+       
+       /*------------------优惠券--------------------*/
+      .coupon{
+      		width: 96%;
+      		margin: 0 auto;
+      		border-bottom: 0.042rem solid #e2e2e2;
+      		padding: 0.42rem 0;
+      }
+      .coupon:after {
+				content: "\0020";
+				display: block;
+				height: 0;
+				clear: both;
+			}
+      
+       .coupon .coupon_card{
+       		width: 14.5rem;
+       		height: 7.17rem;
+       		font-size: 0.75rem;
+       		color: #FFFFFF;
+       		background-color: #4396E8;
+       		margin: 0.84rem 0;
+       		padding: 0.625rem 0;
+       		float: left;
+       }
+       .coupon .coupon_card:nth-of-type(1){
+       		margin-right: 0.4rem;
+       }
+       .coupon .coupon_card:nth-of-type(2){
+       		margin-left: 0.4rem;
+       }
+       
+       .coupon .coupon_card>span:nth-of-type(1){
+       		font-size: 3.5rem;
+       }
+       .coupon .coupon_card>span:nth-of-type(2){
+       		font-size: 1.5rem;
+       }
+       .coupon .coupon_card>p{
+       		line-height: 2.2rem;
+       }
+       
+       /*------------------我的订单---------------------------*/
+       .orders{
+       	font-size: 1rem;
+       	height: 17.5rem;
+       	padding: 1.67rem;
+       	background-color: #FFFFFF;
+       	box-shadow: 0.01rem 0.01rem 0.01rem;
+       	margin-top: 1rem;
+       	line-height: 2.5rem;
+       }
+       .orders h4{
+       		font-weight: 500;
+       		font-size: 1.5rem;
+       }
+       .orders h4 span:nth-of-type(1){
+       		color: #51abe9;
+       }
+       .orders h4 span:nth-of-type(2){
+       		color: #f65c53;
+       		margin-left: 1rem;
+       }
+       .orders p{
+       		display: flex;
+       		flex-direction: row;
+       		font-size: 0.875rem;
+       }
+       
+       .orders p span:nth-of-type(1){
+       		color: #666666;
+       		flex: 1;
+       }
+       .orders p span:nth-of-type(2){
+       		color: #666666;
+       		flex: 3;
+       		margin-left: 2rem;
+       }
+       .orders p span:nth-of-type(2) i{
+       		font-size: 0.5rem;
+		    position: relative;
+		    top: -0.2rem;
+       }
+       
+       
+       .orders .submit_details{
+       		float: right;
+       		width: 7.04rem;
+       		height: 2.5rem;
+       		border: 0.042rem solid #51abe9;
+       		border-radius: 0.5rem;
+       		color: #4396e8;
+       		text-align: center;
+       		line-height: 2.5rem;
+       }
+       
+       .orders h4 span.laton{
+       		color: #51abe9;
+       }
+       
+	</style>
+<!--</head>
+<body>	-->
+		<div class="course_table">
+			
+			<ul class="swiplist">
+				<li class="liston">个人资料</li>
+				<li>修改密码</li>
+				<li>优惠券</li>
+				<li>我的订单</li>
+			</ul>
+			
+		</div>
+		<div class="swiper-container">
+          <div class="swiper-wrapper">
+          	<!--个人资料-->
+            <div class="swiper-slide" >
+            	<div class="personal_data">
+            		<div class="name_img">
+            			<div class="img_left"><img src="img/59f54bb99b988.jpg"/></div>
+            			<div class="modify"><i class="iconfont icon-xiugai"></i><span>修改</span></div>
+            		</div>
+            		<div class="data_lables">
+            			<span>姓名</span><span>雷布斯</span><span><i class="iconfont icon-xiugai"></i>修改</span>
+            		</div>
+            		<div class="data_lables">
+            			<span>真实姓名</span><span>小明</span><span><i class="iconfont icon-xiugai"></i>修改</span>
+            		</div>
+            		<div class="data_lables">
+            			<span>手机号码</span><span>13223256252</span><span><i class="iconfont icon-xiugai"></i>修改</span>
+            		</div>
+            		<div class="data_lables">
+            			<span>性别</span><span>男</span><span><i class="iconfont icon-xiugai"></i>修改</span>
+            		</div>
+            		<div class="data_lables">
+            			<span>生日</span><span>1996-06-08</span><span><i class="iconfont icon-xiugai"></i>修改</span>
+            		</div>
+            		<div class="data_lables">
+            			<span>QQ</span><span>965570332</span><span><i class="iconfont icon-xiugai"></i>修改</span>
+            		</div>
+            		<div class="data_lables">
+            			<span>学校</span><span>空</span><span><i class="iconfont icon-xiugai"></i>修改</span>
+            		</div>
+            	</div>
+            </div>
+            <!--修改密码-->
+            <div class="swiper-slide" >
+            	<div class="password_modify">
+            		<div class="modify_input">
+            			<span>原密码</span>
+            			<div><input id="original_password" type="text" placeholder=""/></div>
+            		</div>
+            		<div class="modify_input">
+            			<span>新密码</span>
+            			<div><input id="new_password" type="text" placeholder=""/></div>
+            		</div>
+            		<div class="modify_input">
+            			<span>确认密码</span>
+            			<div><input id="again_password" type="text" placeholder=""/></div>
+            		</div>
+            		<div class="button_submit">确认修改</div>
+            	</div>
+            </div>
+            <!--优惠券-->
+            <div class="swiper-slide" >
+            	<div class="coupon">
+            		<div class="coupon_card">
+            			<i class="iconfont icon-renminbi"></i><span>500</span><span>优惠券</span>
+            			<p>满<span>2000</span>可用&nbsp;&nbsp;适用所有课程</p>
+            			<span>有效期</span>:<span>2017.09.16</span>~<span>2018.01.24</span>
+            		</div>
+            		<div class="coupon_card">
+            			<i class="iconfont icon-renminbi"></i><span>500</span><span>优惠券</span>
+            			<p>满<span>2000</span>可用&nbsp;&nbsp;适用所有课程</p>
+            			<span>有效期</span>:<span>2017.09.16</span>~<span>2018.01.24</span>
+            		</div>
+            	</div>
+            	<div class="coupon">
+            		<div class="coupon_card">
+            			<i class="iconfont icon-renminbi"></i><span>500</span><span>优惠券</span>
+            			<p>满<span>2000</span>可用&nbsp;&nbsp;适用所有课程</p>
+            			<span>有效期</span>:<span>2017.09.16</span>~<span>2018.01.24</span>
+            		</div>
+            		
+            	</div>
+            </div>
+            <!--我的订单-->
+            <div class="swiper-slide ord_details">
+            	<!--<div class="orders">
+            		<h4><span>订单1</span><span>(待付款)</span></h4>
+            		<p><span>订单号&nbsp;:</span><span>20170914a48b69</span></p>
+            		<p><span>订单内容&nbsp;:</span><span>Scratch Level 1</span></p>
+            		<p><span>订单时间&nbsp;:</span><span>2017-08-14 21:35:32</span></p>
+            		<p><span>应付款&nbsp;:</span><span><i class="iconfont icon-renminbi"></i>2999.00</span></p>
+            		<p><span>实付款&nbsp;:</span><span><i class="iconfont icon-renminbi"></i>2999.00</span></p>
+            		<div class="submit_details">
+            			订单详情
+            		</div>
+            	</div>
+            	<div class="orders">
+            		<h4><span>订单2</span><span class="laton">(已付款)</span></h4>
+            		<p><span>订单号&nbsp;:</span><span>20170824bs58k93</span></p>
+            		<p><span>订单内容&nbsp;:</span><span>Scratch Level 1</span></p>
+            		<p><span>订单时间&nbsp;:</span><span>2017-08-14 21:35:32</span></p>
+            		<p><span>应付款&nbsp;:</span><span><i class="iconfont icon-renminbi"></i>2999.00</span></p>
+            		<p><span>实付款&nbsp;:</span><span><i class="iconfont icon-renminbi"></i>2999.00</span></p>
+            		<div class="submit_details">
+            			订单详情
+            		</div>
+            	</div>-->
+            </div>
+          </div>
+       </div>
+       
+<!--</body>-->       
+	<script> 
+        $(function(){
+        	
+            var mySwiper = new Swiper('.swiper-container', {
+                onTransitionEnd: function(swiper){
+                    $('.swiplist li').eq(mySwiper.activeIndex).addClass('liston').siblings().removeClass('liston');
+                }
+            })
+            $('.swiplist li').click(function(){
+                $(this).addClass('liston').siblings().removeClass('liston');
+                mySwiper.slideTo($(this).index(), 500)
+            });
+            
+            $(".ord_details").load("my_orders.html");
+            
+            
+            
+            
+        })        
+    </script>
+<!--</html>-->

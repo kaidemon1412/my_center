@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title></title>
+		
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_459892_6g1tci9i2aejnhfr.css"/>
+		<link rel="stylesheet" type="text/css" href="css/public_style.css"/>
+		<script type="text/javascript">
+			//designWidth:设计稿的实际宽度值，需要根据实际设置
+			//maxWidth:制作稿的最大宽度值，需要根据实际设置
+			//这段js的最后面有两个参数记得要设置，一个为设计稿实际宽度，一个为制作稿最大宽度，例如设计稿为750，最大宽度为750，则为(750,750);
+			(function(designWidth, maxWidth) {
+				var doc = document,
+				win = window,
+				docEl = doc.documentElement,
+				remStyle = document.createElement("style"),
+				tid;
+			
+				function refreshRem() {
+					var width = docEl.getBoundingClientRect().width;
+					maxWidth = maxWidth || 540;
+					width>maxWidth && (width=maxWidth);
+					//这里的20倍是实际设计稿的倍数，即设计稿的20px==1rem；如果是100则是100px == 1rem
+					var rem = width * 20 / designWidth;   
+					remStyle.innerHTML = 'html{font-size:' + rem + 'px;}';
+				}
+			
+				if (docEl.firstElementChild) {
+					docEl.firstElementChild.appendChild(remStyle);
+				} else {
+					var wrap = doc.createElement("div");
+					wrap.appendChild(remStyle);
+					doc.write(wrap.innerHTML);
+					wrap = null;
+				}
+				//要等 wiewport 设置好后才能执行 refreshRem，不然 refreshRem 会执行2次；
+				refreshRem();
+			
+				win.addEventListener("resize", function() {
+					clearTimeout(tid); //防止执行两次
+					tid = setTimeout(refreshRem, 300);
+				}, false);
+			
+				win.addEventListener("pageshow", function(e) {
+					if (e.persisted) { // 浏览器后退的时候重新计算
+						clearTimeout(tid);
+						tid = setTimeout(refreshRem, 300);
+					}
+				}, false);
+			
+				if (doc.readyState === "complete") {
+					doc.body.style.fontSize = "16px";
+				} else {
+					doc.addEventListener("DOMContentLoaded", function(e) {
+						doc.body.style.fontSize = "16px";
+					}, false);
+				}
+			})(750, 750);
+		</script>
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>
+		
+		<style type="text/css">
+			
+			body{
+				position: relative;
+			}
+			
+			.sidebar{
+				width: 50%;
+				height: 100%;
+				color: white;
+				z-index: 100;
+				position: absolute;
+				top: 0;
+				left: -50%;
+				background-color: rgba(0,0,0,0.5);
+			}
+			
+			.sidebar .user_info div img{
+				width: 3rem;
+				height: 3rem;
+			}
+			
+			.page .header{
+				display: block;
+				height: 3.875rem;
+				background-color: #4396e8;
+				line-height: 3.875rem;
+			}
+			.page .header .menu{
+				float: left;
+			}
+			.page .header .menu .iconfont{
+				font-size: 3.5rem;
+				margin-left: 1.96rem;
+				color: #a1cbf4;
+			}
+			.page .header .user_img{
+				float: right;
+				width: 2.4rem;
+				height: 2.4rem;
+				border: 0.01rem solid #CCCCCC;
+				overflow: hidden;
+				border-radius: 2.5rem;
+				margin: 0.75rem 1.666rem 0 0;
+			}
+			.page .header .user_img img{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+		
+		
+	</head>
+	<body>
+		<div class="sidebar">
+			<div class="close"><i class="iconfont icon-guanbi"></i></div>
+			<div class="user_info">
+				<div><img src="img/user.jpg"/></div>
+				<span>UserName</span>
+			</div>
+			<ul>
+				<li>第一行<i></i></li>
+				<li>第二行<i></i></li>
+				<li>第三行<i></i></li>
+				<li>第四行<i></i></li>
+				<li>第五行<i></i></li>
+			</ul>
+			<button>注销</button>
+		</div>
+		<div class="page">  
+	        <header class="header">
+	        	<div class="menu">
+	        		<i class="iconfont icon-icon-zhedie2"></i>
+	        	</div>
+	        	<div class="user_img">
+	        		<img src="img/user.jpg"/>
+	        	</div>
+	        </header>  
+        	<section class="content">
+        		
+        	</section>  
+        	<footer class="footer">
+	        	<nav class="foot-nav">  
+	                	<dl>
+		                	<dt><img src="img/images/course_on.png"/></dt>
+		                	<dd>课程</dd>
+		                </dl>
+	                
+		                 <dl>
+		                	<dt><img src="img/images/works.png"/></dt>
+		                	<dd>作品</dd>
+		                </dl>
+		           
+		                 <dl>
+		                	<dt><img src="img/images/account.png"/></dt>
+		                	<dd>账户</dd>
+		                </dl>
+		            
+		            	<dl>
+		                	<dt><img src="img/images/community.png"/></dt>
+		                	<dd>社区</dd>
+		                </dl> 
+		                
+		                 <dl>
+		                	<dt><img src="img/images/notice.png"/></dt>
+		                	<dd>通知</dd>
+		                </dl>
+		           
+	            </nav>  
+        </footer>  
+    </div>  
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			setTimeout(function(){$(".content").load("live_course.html")},2000); //默认加载课程总页面
+			$(".foot-nav dl").on("click",function(){
+				
+//				console.log($(this).find("dt").find("img").attr("src"));
+//				console.log($(this).index());
+				if($(this).index() == 0){
+					setTimeout(function(){$(".content").load("live_course.html")},500);
+					$(this).find("dt").find("img").attr("src","img/images/course_on.png");
+					$(".foot-nav dl").eq(1).find("dt").find("img").attr("src","img/images/works.png");
+					$(".foot-nav dl").eq(2).find("dt").find("img").attr("src","img/images/account.png");
+					$(".foot-nav dl").eq(3).find("dt").find("img").attr("src","img/images/community.png");
+					$(".foot-nav dl").eq(4).find("dt").find("img").attr("src","img/images/notice.png");
+				}else if($(this).index() == 1){
+					setTimeout(function(){$(".content").load("myupse.html")},500);
+					$(this).find("dt").find("img").attr("src","img/images/works_on.png");
+					$(".foot-nav dl").eq(0).find("dt").find("img").attr("src","img/images/course.png");
+					$(".foot-nav dl").eq(2).find("dt").find("img").attr("src","img/images/account.png");
+					$(".foot-nav dl").eq(3).find("dt").find("img").attr("src","img/images/community.png");
+					$(".foot-nav dl").eq(4).find("dt").find("img").attr("src","img/images/notice.png");
+				}else if($(this).index() == 2){
+					setTimeout(function(){$(".content").load("mycenter.html")},500);
+					$(this).find("dt").find("img").attr("src","img/images/account_on.png");
+					$(".foot-nav dl").eq(0).find("dt").find("img").attr("src","img/images/course.png");
+					$(".foot-nav dl").eq(1).find("dt").find("img").attr("src","img/images/works.png");
+					$(".foot-nav dl").eq(3).find("dt").find("img").attr("src","img/images/community.png");
+					$(".foot-nav dl").eq(4).find("dt").find("img").attr("src","img/images/notice.png");
+				}else if($(this).index() == 3){
+					setTimeout(function(){$(".content").load("interaction.html")},500);
+					$(this).find("dt").find("img").attr("src","img/images/community_on.png");
+					$(".foot-nav dl").eq(0).find("dt").find("img").attr("src","img/images/course.png");
+					$(".foot-nav dl").eq(2).find("dt").find("img").attr("src","img/images/account.png");
+					$(".foot-nav dl").eq(1).find("dt").find("img").attr("src","img/images/works.png");
+					$(".foot-nav dl").eq(4).find("dt").find("img").attr("src","img/images/notice.png");
+				}else if($(this).index() == 4){
+					$(this).find("dt").find("img").attr("src","img/images/notice_on.png");
+					$(".foot-nav dl").eq(0).find("dt").find("img").attr("src","img/images/course.png");
+					$(".foot-nav dl").eq(2).find("dt").find("img").attr("src","img/images/account.png");
+					$(".foot-nav dl").eq(3).find("dt").find("img").attr("src","img/images/community.png");
+					$(".foot-nav dl").eq(1).find("dt").find("img").attr("src","img/images/works.png");
+				} 
+			})
+		});
+		
+	</script>
+</html>
